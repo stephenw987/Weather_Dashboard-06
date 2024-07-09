@@ -154,9 +154,9 @@ function renderForecast(dailyForecast) {
   forecastContainer.innerHTML = '';
   forecastContainer.append(headingCol);
 
-  for (let i = 0; i < dailyForecast.length; i++) {
+  for (let i = 0; i <= dailyForecast.length; i++) {
     // First filters through all of the data and returns only data that falls between one day after the current data and up to 5 days later.
-    if (dailyForecast[i].dt >= startDt && dailyForecast[i].dt < endDt) {
+    if (dailyForecast[i].dt >= startDt && dailyForecast[i].dt <= endDt) {
       // Then filters through the data and returns only data captured at noon for each day.
       if (dailyForecast[i].dt_txt.slice(11, 13) == '12') {
         renderForecastCard(dailyForecast[i]);
